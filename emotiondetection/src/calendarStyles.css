@@ -1,0 +1,97 @@
+/* Custom CSS for the calendar to fit container size */
+.custom-calendar {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem; /* Adjust as needed */
+    border: 2px solid #ccc; /* Adjust border color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adjust shadow if needed */
+}
+
+/* Hide year navigation arrows */
+.react-calendar__navigation__prev2-button,
+.react-calendar__navigation__next2-button {
+    display: none; /* Hide both previous and next year buttons */
+}
+
+/* Ensure only month navigation buttons are visible */
+.react-calendar__navigation__prev-button,
+.react-calendar__navigation__next-button {
+    display: block; /* Ensure navigation buttons are visible */
+}
+
+/* Style the navigation buttons */
+.react-calendar__navigation__prev-button::before,
+.react-calendar__navigation__next-button::before {
+    font-size: 1.5rem; /* Adjust font size for visibility */
+    color: #333; /* Set color for arrows */
+}
+
+/* Ensure tiles (dates) are spaced equally and fill the container */
+.react-calendar__month-view {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensure calendar view fits the height of the container */
+}
+
+.react-calendar__month-view__weeks {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.react-calendar__month-view__week {
+    display: flex;
+    flex: 1; /* Make weeks fill available height */
+    justify-content: space-between; /* Ensure dates are spaced equally */
+}
+
+/* Adjust day tiles to include margin and spacing */
+.react-calendar__month-view__days__day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ensure days fill available width */
+    height: 6rem; /* Adjust height to prevent full container height usage */
+    margin: 5px 0; /* Add top and bottom margin */
+    box-sizing: border-box; /* Include padding in width/height calculations */
+    font-size: 1.25rem; /* Increase font size for dates */
+}
+
+/* Remove any red color from day tiles */
+.react-calendar__tile {
+    color: inherit; /* Use the inherited text color */
+    background: transparent; /* Remove background color */
+    border: none; /* Remove borders if present */
+}
+
+/* Remove red color from active dates */
+.react-calendar__tile--active {
+    background: transparent; /* Remove background color */
+    color: inherit; /* Keep text color as inherited */
+}
+
+/* Remove red color from current date */
+.react-calendar__tile--now {
+    background: transparent; /* Remove background color */
+    color: inherit; /* Keep text color as inherited */
+}
+
+/* Remove underline from weekday names (Monday, Tuesday, etc.) */
+.react-calendar__month-view__weekdays__weekday {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Use the inherited text color */
+}
+
+/* Ensure the calendar component fits nicely within the container */
+.react-calendar {
+    width: 100%;
+    height: 100%;
+}
+
+/* Additional styles to ensure no underline from other sources */
+.react-calendar__month-view__weekdays__weekday abbr {
+    text-decoration: none; /* Remove underline from abbr tags */
+    color: inherit; /* Use the inherited text color */
+}
+
+  
